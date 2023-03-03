@@ -6,8 +6,7 @@ namespace CoreSchool.Entities
         public string Name { get; set; }
         public Student Student { get; set; }
         public Assignment Assignment { get; set; }
-        public float Calification { get; set; }
-
+        public double Calification { get; set; }
         public Evaluation() => id = Guid.NewGuid().ToString();
     }
 }

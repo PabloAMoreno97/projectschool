@@ -19,12 +19,7 @@ namespace CoreSchool
 
             LoadCourses();
             LoadAssignments();
-            foreach (var course in School.Courses)
-            {
-                course.Students.AddRange(LoadStudents());
-            }
             LoadCalifications();
-
         }
 
         /*
@@ -32,10 +27,34 @@ namespace CoreSchool
         */
         private void LoadCalifications()
         {
-
+            string[] names = { "Initial Evaluation", "Evaluation 1", "Evaluation 2", "Evaluation 3", "Final Evaluation" };
+            foreach (Course course in School.Courses)
+            {
+                foreach (Assignment assignment in course.Assignments)
+                {
+                    foreach (Student student in course.Students)
+                    {
+                        List<Evaluation> evaluationsList = new List<Evaluation>();
+                        foreach (string name in names)
+                        {
+                            Random rnd = new Random();
+                            double calification = rnd.Next(0, 500);
+                            calification /= 100;
+                            evaluationsList.Add(new Evaluation
+                            {
+                                Name = name,
+                                Assignment = assignment,
+                                Student = student,
+                                Calification = calification
+                            });
+                        }
+                        course.Evaluation.AddRange(evaluationsList);
+                    }
+                }
+            }
         }
 
-        private IEnumerable<Student> LoadStudents()
+        private List<Student> LoadRandomStudents(int quantity)
         {
             string[] names1 = { "Jhon", "Robert", "Mary", "Rose", "Philips" };
             string[] lastnames = { "Smith", "Johnson", "Miller", "Jones", "Williams" };
@@ -45,7 +64,7 @@ namespace CoreSchool
                                                 from name2 in names2
                                                 from lastname in lastnames
                                                 select new Student { Name = $"{name1} {name2} {lastname}" };
-            return studentsList;
+            return studentsList.OrderBy((student) => student.Id).Take(quantity).ToList();
         }
 
         private void LoadAssignments()
@@ -65,14 +84,22 @@ namespace CoreSchool
 
         public void LoadCourses()
         {
-            List<Course> courseList = new List<Course>(){
+            List<Course> coursesList = new List<Course>(){
                 new Course(){Name = "101", Schedule = Schedule.Morning },
                 new Course(){Name = "102", Schedule = Schedule.Afternoon },
                 new Course(){Name = "301", Schedule = Schedule.Morning },
                 new Course(){Name = "501", Schedule = Schedule.Night },
                 new Course(){Name = "401", Schedule = Schedule.Morning }
             };
-            School.Courses = courseList;
+            School.Courses.AddRange(coursesList);
+
+            Random rnd = new Random();
+            int randomQuantity = 0;
+            foreach (Course course in School.Courses)
+            {
+                randomQuantity = rnd.Next(5, 20);
+                course.Students = LoadRandomStudents(randomQuantity);
+            }
         }
     }
 }

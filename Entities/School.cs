@@ -20,6 +20,7 @@ namespace CoreSchool.Entities
             (this.name, CreationYear) = (name, creationYear);
             Country = country;
             City = city;
+            Courses = new List<Course>();
         }
 
         public override string ToString()
