@@ -8,6 +8,12 @@ namespace CoreSchool.Entities
         public List<Assignment> Assignments { get; set; }
         public List<Student> Students { get; set; }
         public float Calification { get; set; }
-        public Course() => Id = Guid.NewGuid().ToString();
+        public Course()
+        {
+            Id = Guid.NewGuid().ToString();
+            Assignments = new List<Assignment>();
+            Students = new List<Student>();
+        }
+
     }
 }

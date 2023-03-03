@@ -19,18 +19,33 @@ namespace CoreSchool
 
             LoadCourses();
             LoadAssignments();
+            foreach (var course in School.Courses)
+            {
+                course.Students.AddRange(LoadStudents());
+            }
             LoadCalifications();
-            LoadStudents();
+
         }
 
+        /*
+        ___________________________METHODS____________________________
+        */
         private void LoadCalifications()
         {
-            throw new NotFiniteNumberException();
+
         }
 
-        private void LoadStudents()
+        private IEnumerable<Student> LoadStudents()
         {
-            throw new NotFiniteNumberException();
+            string[] names1 = { "Jhon", "Robert", "Mary", "Rose", "Philips" };
+            string[] lastnames = { "Smith", "Johnson", "Miller", "Jones", "Williams" };
+            string[] names2 = { "Liam", "Olivia", "Noah", "Emma", "Elijah" };
+
+            IEnumerable<Student> studentsList = from name1 in names1
+                                                from name2 in names2
+                                                from lastname in lastnames
+                                                select new Student { Name = $"{name1} {name2} {lastname}" };
+            return studentsList;
         }
 
         private void LoadAssignments()
