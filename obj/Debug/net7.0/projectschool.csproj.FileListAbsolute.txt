@@ -1,0 +1,15 @@
+D:\estudio\net\dotnet2.1fundamentals\projectschool\bin\Debug\net7.0\projectschool.exe
+D:\estudio\net\dotnet2.1fundamentals\projectschool\bin\Debug\net7.0\projectschool.deps.json
+D:\estudio\net\dotnet2.1fundamentals\projectschool\bin\Debug\net7.0\projectschool.runtimeconfig.json
+D:\estudio\net\dotnet2.1fundamentals\projectschool\bin\Debug\net7.0\projectschool.dll
+D:\estudio\net\dotnet2.1fundamentals\projectschool\bin\Debug\net7.0\projectschool.pdb
+D:\estudio\net\dotnet2.1fundamentals\projectschool\obj\Debug\net7.0\projectschool.csproj.AssemblyReference.cache
+D:\estudio\net\dotnet2.1fundamentals\projectschool\obj\Debug\net7.0\projectschool.GeneratedMSBuildEditorConfig.editorconfig
+D:\estudio\net\dotnet2.1fundamentals\projectschool\obj\Debug\net7.0\projectschool.AssemblyInfoInputs.cache
+D:\estudio\net\dotnet2.1fundamentals\projectschool\obj\Debug\net7.0\projectschool.AssemblyInfo.cs
+D:\estudio\net\dotnet2.1fundamentals\projectschool\obj\Debug\net7.0\projectschool.csproj.CoreCompileInputs.cache
+D:\estudio\net\dotnet2.1fundamentals\projectschool\obj\Debug\net7.0\projectschool.dll
+D:\estudio\net\dotnet2.1fundamentals\projectschool\obj\Debug\net7.0\refint\projectschool.dll
+D:\estudio\net\dotnet2.1fundamentals\projectschool\obj\Debug\net7.0\projectschool.pdb
+D:\estudio\net\dotnet2.1fundamentals\projectschool\obj\Debug\net7.0\projectschool.genruntimeconfig.cache
+D:\estudio\net\dotnet2.1fundamentals\projectschool\obj\Debug\net7.0\ref\projectschool.dll
